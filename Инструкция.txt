@@ -1,0 +1,33 @@
+Скачать библиотеки в терминале : 
+
+pip install pandas
+
+pip install et_xmlfile-2.0.0-py3-none-any.whl  
+
+pip install openpyxl-3.1.5-py2.py3-none-any.whl
+
+Запуск с помощью команды: 
+
+python main.py attendance_data (Где main.py - это название файла в котором лежит основной код, а attendance_data - это папка в которой лежат csv файлы)
+
+
+Для общего развития:
+
+Создание анализатора
+analyzer = AttendanceAnalyzer(threshold_percent=75.0)
+
+Обработка всех CSV файлов из папки
+stats_df = analyzer.process_all_files("path/to/csv/files")
+
+Получение проблемных студентов
+problem_students = analyzer.get_problem_students(stats_df)
+
+Получение статистики по группам
+group_stats = analyzer.get_group_statistics(stats_df)
+
+Генерация отчета
+report = analyzer.generate_report(stats_df)
+print(report)
+
+Сохранение результатов
+analyzer.save_detailed_results(stats_df, "results")
